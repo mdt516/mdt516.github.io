@@ -4,6 +4,7 @@ const liButton = document.getElementById("linkedin")
 const calcProj = document.getElementById("calc")
 const weblink = document.getElementById("weblink")
 const calcDemo = document.getElementById("calcPr")
+const synthButton = document.getElementById("synthButton")
 
 
 githubButton.addEventListener("click", function()
@@ -29,4 +30,9 @@ weblink.addEventListener("click", function()
 calcDemo.addEventListener("click", function()
 {
     window.location.href = "https://mdt516.github.io/calculator"
+})
+
+synthButton.addEventListener("click", function()
+{
+    window.location.href = "https://github.com/mdt516/voxGenesis"
 })
