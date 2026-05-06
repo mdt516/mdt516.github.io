@@ -1,5 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
 
+:root {
+  --primary-color: #ff0000;
+  --secondary-color: #5f7c9b;
+  --hover-color: #003d80;
+  --bg-light: #803838;
+  --bg-dark: #453f3f;
+  --text-dark: #e0cdcd;
+  --shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  --border-radius: 8px;
+}
+
 html, body {
   min-height: 100vh;
   margin: 0;
@@ -9,27 +20,47 @@ html, body {
 body {
   font-family: 'Inter', sans-serif;
   background-color: #f4f4f9;
-  color: #333;
+  color: var(--text-dark);
   line-height: 1.6;
   display: flex;
   flex-direction: column;
 }
 
-/* Add this new footer styling */
+main {
+  background-color: var(--bg-dark);
+}
+
+header {
+  text-align: center;
+  padding: 20px;
+  background-color: var(--primary-color);
+  color: white;
+}
+
+header h1 {
+  font-size: 2.5rem;
+  margin: 10px 0;
+}
+
 footer {
   margin-top: auto;
   text-align: center;
   padding: 20px;
-  background-color: #ffffff;
-  box-shadow: 0px -4px 6px rgba(0, 0, 0, 0.1);
+  background-color: var(--bg-light);
+  box-shadow: var(--shadow);
 }
 
-/* Header Section */
-header {
-  text-align: center;
+.about, .projects {
   padding: 20px;
-  background-color: #ff0000; 
-  color: white;
+  max-width: 800px;
+  margin: 20px auto;
+  background: var(--bg-light);
+  box-shadow: var(--shadow);
+  border-radius: var(--border-radius);
+}
+
+.about {
+  text-align: center;
 }
 
 .about-img {
@@ -40,60 +71,14 @@ header {
   margin: 10px auto;
 }
 
-header h1 {
-  font-size: 2.5rem;
-  margin: 10px 0;
-}
-
-.links button {
-  padding: 10px 20px;
-  background-color: #5c738c;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  font-size: 1rem;
-  cursor: pointer;
-  margin-top: 10px;
-}
-
-.links button:hover {
-  background-color: #003d80;
-}
-
-/* About Section */
-.about {
-  padding: 20px;
-  text-align: center;
-  background: #ffffff;
-  margin: 20px auto;
-  max-width: 800px;
-  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-  border-radius: 8px;
-}
-
-.about h2 {
+.about h2, .projects h2 {
   font-size: 1.8rem;
+  text-align: center;
   color: #5c728a;
 }
 
 .about p {
   font-size: 1.1rem;
-}
-
-/* Projects Section */
-.projects {
-  padding: 20px;
-  max-width: 800px;
-  margin: 20px auto;
-  background: #ffffff;
-  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-  border-radius: 8px;
-}
-
-.projects h2 {
-  text-align: center;
-  color: #4f657c;
-  font-size: 1.8rem;
 }
 
 .projects ul {
@@ -102,25 +87,26 @@ header h1 {
 }
 
 .projects li {
-  background: #f8f9fa;
-  border: 1px solid #ced4da;
+  background: #631313;
   margin: 10px 0;
   padding: 10px;
   border-radius: 5px;
+  box-shadow: var(--shadow);
   font-size: 1.1rem;
 }
 
-.projects button {
+button {
   padding: 10px 20px;
-  background-color: #5c738c;
+  background-color: var(--secondary-color);
   color: white;
   border: none;
   border-radius: 5px;
   font-size: 1rem;
   cursor: pointer;
   margin-top: 10px;
+  transition: background-color 0.2s;
 }
 
-.projects button:hover {
-  background-color: #003d80;
+button:hover {
+  background-color: var(--hover-color);
 }

@@ -1,5 +1,6 @@
 const githubButton = document.getElementById("github")
 const liButton = document.getElementById("linkedin")
+
 const calcProj = document.getElementById("calc")
 const weblink = document.getElementById("weblink")
 const calcDemo = document.getElementById("calcPr")
