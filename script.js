@@ -5,6 +5,7 @@ const calcProj = document.getElementById("calc")
 const weblink = document.getElementById("weblink")
 const calcDemo = document.getElementById("calcPr")
 const synthButton = document.getElementById("synthButton")
+const tapbackButton = document.getElementById("tapback")
 
 
 githubButton.addEventListener("click", function()
@@ -35,4 +36,9 @@ calcDemo.addEventListener("click", function()
 synthButton.addEventListener("click", function()
 {
     window.location.href = "https://github.com/mdt516/voxGenesis"
+})
+
+tapbackButton.addEventListener("click", function()
+{
+    window.location.href = "https://github.com/mdt516/tapback"
 })
