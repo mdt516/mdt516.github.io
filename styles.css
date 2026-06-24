@@ -9,6 +9,9 @@
   --text-dark: #e0cdcd;
   --shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
   --border-radius: 8px;
+
+  --sidebar-width: 100px;
+  --sidebar-border-width: 5px;
 }
 
 body {
@@ -18,29 +21,16 @@ body {
   line-height: 1.6;
 }
 
-.main-plus-sidebar {
-  display: flex;
-  flex-direction: row;
-}
-
-.sidebar {
-  width: 150px;
-  display: flex;
-}
-
-.sidebar button {
-  padding: 2;
-}
-
 main {
   background-color: var(--bg-dark);
-  flex: 1;
+  margin-left: calc(var(--sidebar-width) + var(--sidebar-border-width));
 }
 
 header {
   text-align: center;
   padding: 20px;
   background-color: var(--primary-color);
+  margin-left: calc(var(--sidebar-border-width) + var(--sidebar-width));
   color: white;
 }
 
@@ -57,7 +47,57 @@ footer {
   box-shadow: var(--shadow);
 }
 
-.about, .projects {
+button {
+  padding: 10px 20px;
+  background-color: var(--secondary-color);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: background-color 0.2s;
+}
+
+button:hover {
+  background-color: var(--hover-color);
+}
+
+.sidebar {
+  height: 100%;
+  width: var(--sidebar-width);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  overflow-x: hidden;
+  padding-top: 5px;
+  padding-left: 0;
+  background-color: rgb(144, 103, 103);
+
+  border-style: solid;
+  border-width: var(--sidebar-border-width);
+  border-left: 0px;
+  border-color: rgb(167, 72, 72);
+  border-radius: var(--border-radius);
+}
+
+.sidebar ul {
+  padding-left: 0;
+  list-style-type: none;
+}
+
+.sidebar li {
+  margin: 4px;
+  border-style: solid;
+  border-radius: var(--border-radius);
+  border-color: rgb(81, 101, 94);
+  background-color: #e0cdcd;
+  padding: 3px;
+  text-align: center;
+}
+
+.about, .projects, .devlog {
   padding: 20px;
   max-width: 800px;
   margin: 20px auto;
@@ -78,7 +118,8 @@ footer {
   margin: 10px auto;
 }
 
-.about h2, .projects h2 {
+.about h2,
+.projects h2 {
   font-size: 1.8rem;
   text-align: center;
   color: #5c728a;
@@ -100,20 +141,4 @@ footer {
   border-radius: 5px;
   box-shadow: var(--shadow);
   font-size: 1.1rem;
-}
-
-button {
-  padding: 10px 20px;
-  background-color: var(--secondary-color);
-  color: white;
-  border: none;
-  border-radius: 5px;
-  font-size: 1rem;
-  cursor: pointer;
-  margin-top: 10px;
-  transition: background-color 0.2s;
-}
-
-button:hover {
-  background-color: var(--hover-color);
 }
